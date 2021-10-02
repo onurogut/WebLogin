@@ -78,7 +78,8 @@ else
     <input type="password" class="form-control" name="password" id="password" required>
 
   </div>
-  <button type="submit" class="btn btn-primary">Register</button>
+  <a href="index.php"><button type="button" class="btn btn-primary"><- Login</button></a>
+  <button type="submit" class="btn btn-success">Register</button>
   </div>
 
 
