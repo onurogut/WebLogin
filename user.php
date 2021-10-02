@@ -23,21 +23,22 @@ if(mysqli_num_rows($result) > 0)
 		if($sonuc[0] > 0)
 		{
 			$admin_paneli="<div style='justify-content: center; display: flex; margin-top:-50px;'>
-<a href='/digituslogin/admin.php'><font size='4'>Admin Paneli</font></a></div>";
+<a href='/digituslogin/admin.php'><button type='button' class='btn btn-primary'>Admin Paneli</button></a></div>";
 		}
 }
 }
 else {
 
 		header("Location: index.php");
-	}
+}
 
 
 ?>
 <div class="jumbotron">
 	<center>
-		<h1>Welcome <?php echo $username.", ".$name." ".$surname; ?></h1>
-		<br><a href="logout.php">Logout</a>
-		<? echo $admin_paneli; ?>
+		<h1>Welcome <?php echo $username.", ".$name." ".$surname; ?></h1><br>
+	<br><br><? echo $admin_paneli; ?><br>
+		<a href="logout.php"><button type="button" class="btn btn-danger">Logout</button></a>
+
 	</center>
 </div>

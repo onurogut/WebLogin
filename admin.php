@@ -14,12 +14,12 @@ $sql = "SELECT * FROM users WHERE id='$id'";
 $result = mysqli_query($db, $sql);
 if(mysqli_num_rows($result) > 0)
 {
-	while($row = mysqli_fetch_assoc($result))
-	{
-		$name = $row["name"];
-		$surname = $row["surname"];
-		$email = $row["email"];
-		$username = $row["username"];
+  while($row = mysqli_fetch_assoc($result))
+  {
+    $name = $row["name"];
+    $surname = $row["surname"];
+    $email = $row["email"];
+    $username = $row["username"];
 }
 $kontrol = "SELECT admin FROM users WHERE email='$email'";
 $kontrol2=mysqli_query($db,$kontrol);
@@ -40,7 +40,7 @@ else {
 }
 }
 else {
-		header("Location: index.php");
+    header("Location: index.php");
 }
 $logtime      = "SELECT AVG(time) FROM taken_time WHERE DAY(day) = DAY('$hlit')";
 $logtimex     = mysqli_query($db, $logtime);
@@ -54,22 +54,22 @@ if(mysqli_num_rows($hmny) > 0)
 }
 ?>
 <div class="jumbotron">
-	<center>
-		<h1>Welcome <?php echo $username.", ".$name." ".$surname; ?></h1>
-		<br><a href="logout.php">Logout</a><br><br>
+  <center>
+    <h1>Welcome <?php echo $username.", ".$name." ".$surname; ?></h1><br>
     <form class="form-horizontal" method="POST" action="admin.php">
-      <b>Users Online:</b><? echo $count_user_online; ?><br>
-      <b>How many new users are successfully registered within a time period:</b> <? echo $hmnyu; ?>
+    <div class='alert alert-success' role='alert'>  <b>Users Online:</b><? echo $count_user_online; ?><br> </div>
+    <div class='alert alert-success' role='alert'>  <b>How many new users are successfully registered within a time period:</b> <? echo $hmnyu; ?>
     <input type="text" name="hmnu" style="width:75px;">
-    <input type="submit" value="?"><br>
-    <b>How long it takes to complete login (in seconds):</b> <? echo $logtimetaken; ?>
+    <input type="submit" value="Get" class="btn btn-primary"></div>
+  <div class='alert alert-dark' role='alert'>  <b>How long it takes to complete login (in seconds):</b> <? echo $logtimetaken; ?>
     <input type="date" name="hlit" value="<?php echo date('Y-m-d h:i:s'); ?>" />
-    <input type="submit" value="?"><br>
+    <input type="submit" value="Get" class="btn btn-primary"></div>
+
+<div class='alert alert-danger' role='alert'>
+    <? echo $didntverify; ?></div>
+    <a href="logout.php"><button type="button" class="btn btn-danger">Logout</button></a>
 
 
-    <? echo $didntverify; ?><br>
 
-
-
-	</center>
+  </center>
 </div>
