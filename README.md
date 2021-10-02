@@ -14,12 +14,12 @@ active VARCHAR(1) NOT NULL,
 hash VARCHAR(255) NOT NULL,
 admin VARCHAR(1) NOT NULL,
 created_at DATETIME DEFAULT CURRENT_TIMESTAMP 
-) 
+);
 CREATE TABLE `online_users` (
 `session` char(100) NOT NULL default '',
 `time` int(11) NOT NULL default '0'
-)
+);
 CREATE TABLE taken_time (
 time VARCHAR(100) NOT NULL,
 day DATETIME DEFAULT CURRENT_TIMESTAMP 
-)
+);
